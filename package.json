@@ -1,0 +1,41 @@
+{
+  "name": "tailwind-vw-utilities",
+  "version": "1.0.0",
+  "description": "Tailwind CSS v4 plugin that automatically converts px values to vw units",
+  "author": "drapon",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": "./index.css",
+    "./presets/sp-375": "./presets/sp-375.css",
+    "./presets/retina-750": "./presets/retina-750.css",
+    "./presets/desktop": "./presets/desktop.css"
+  },
+  "files": [
+    "index.css",
+    "presets",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "tailwindcss",
+    "tailwind",
+    "css",
+    "vw",
+    "viewport",
+    "responsive",
+    "utilities",
+    "mobile-first"
+  ],
+  "peerDependencies": {
+    "tailwindcss": "^4.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drapon/tailwind-vw-utilities.git"
+  },
+  "homepage": "https://github.com/drapon/tailwind-vw-utilities#readme",
+  "bugs": {
+    "url": "https://github.com/drapon/tailwind-vw-utilities/issues"
+  }
+}

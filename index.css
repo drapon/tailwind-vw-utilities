@@ -1,0 +1,582 @@
+/* === tailwind-vw-utilities === */
+/* Tailwind CSS v4 plugin that automatically converts px values to vw units */
+/* https://github.com/hayashi/tailwind-vw-utilities */
+
+:root {
+  --vw-base: 375; /* Default base width (px) */
+}
+
+/* ============================================
+   Margin
+   ============================================ */
+@utility vw-m-* {
+  margin: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+@utility vw-mx-* {
+  margin-inline: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+@utility vw-my-* {
+  margin-block: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+@utility vw-mt-* {
+  margin-top: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+@utility vw-mr-* {
+  margin-right: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+@utility vw-mb-* {
+  margin-bottom: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+@utility vw-ml-* {
+  margin-left: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+@utility vw-ms-* {
+  margin-inline-start: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+@utility vw-me-* {
+  margin-inline-end: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+/* Negative margins */
+@utility -vw-m-* {
+  margin: calc(--value(integer) / var(--vw-base) * -100vw);
+}
+
+@utility -vw-mx-* {
+  margin-inline: calc(--value(integer) / var(--vw-base) * -100vw);
+}
+
+@utility -vw-my-* {
+  margin-block: calc(--value(integer) / var(--vw-base) * -100vw);
+}
+
+@utility -vw-mt-* {
+  margin-top: calc(--value(integer) / var(--vw-base) * -100vw);
+}
+
+@utility -vw-mr-* {
+  margin-right: calc(--value(integer) / var(--vw-base) * -100vw);
+}
+
+@utility -vw-mb-* {
+  margin-bottom: calc(--value(integer) / var(--vw-base) * -100vw);
+}
+
+@utility -vw-ml-* {
+  margin-left: calc(--value(integer) / var(--vw-base) * -100vw);
+}
+
+@utility -vw-ms-* {
+  margin-inline-start: calc(--value(integer) / var(--vw-base) * -100vw);
+}
+
+@utility -vw-me-* {
+  margin-inline-end: calc(--value(integer) / var(--vw-base) * -100vw);
+}
+
+/* ============================================
+   Padding
+   ============================================ */
+@utility vw-p-* {
+  padding: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+@utility vw-px-* {
+  padding-inline: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+@utility vw-py-* {
+  padding-block: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+@utility vw-pt-* {
+  padding-top: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+@utility vw-pr-* {
+  padding-right: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+@utility vw-pb-* {
+  padding-bottom: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+@utility vw-pl-* {
+  padding-left: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+@utility vw-ps-* {
+  padding-inline-start: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+@utility vw-pe-* {
+  padding-inline-end: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+/* ============================================
+   Gap
+   ============================================ */
+@utility vw-gap-* {
+  gap: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+@utility vw-gap-x-* {
+  column-gap: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+@utility vw-gap-y-* {
+  row-gap: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+/* ============================================
+   Width
+   ============================================ */
+@utility vw-w-* {
+  width: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+@utility vw-min-w-* {
+  min-width: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+@utility vw-max-w-* {
+  max-width: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+/* ============================================
+   Height
+   ============================================ */
+@utility vw-h-* {
+  height: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+@utility vw-min-h-* {
+  min-height: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+@utility vw-max-h-* {
+  max-height: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+/* ============================================
+   Size (width & height)
+   ============================================ */
+@utility vw-size-* {
+  width: calc(--value(integer) / var(--vw-base) * 100vw);
+  height: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+/* ============================================
+   Font Size
+   ============================================ */
+@utility vw-text-* {
+  font-size: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+/* ============================================
+   Line Height (leading)
+   ============================================ */
+@utility vw-leading-* {
+  line-height: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+/* ============================================
+   Position (inset)
+   ============================================ */
+@utility vw-inset-* {
+  inset: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+@utility vw-inset-x-* {
+  left: calc(--value(integer) / var(--vw-base) * 100vw);
+  right: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+@utility vw-inset-y-* {
+  top: calc(--value(integer) / var(--vw-base) * 100vw);
+  bottom: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+@utility vw-top-* {
+  top: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+@utility vw-right-* {
+  right: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+@utility vw-bottom-* {
+  bottom: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+@utility vw-left-* {
+  left: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+@utility vw-start-* {
+  inset-inline-start: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+@utility vw-end-* {
+  inset-inline-end: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+/* Negative positions */
+@utility -vw-inset-* {
+  inset: calc(--value(integer) / var(--vw-base) * -100vw);
+}
+
+@utility -vw-inset-x-* {
+  left: calc(--value(integer) / var(--vw-base) * -100vw);
+  right: calc(--value(integer) / var(--vw-base) * -100vw);
+}
+
+@utility -vw-inset-y-* {
+  top: calc(--value(integer) / var(--vw-base) * -100vw);
+  bottom: calc(--value(integer) / var(--vw-base) * -100vw);
+}
+
+@utility -vw-top-* {
+  top: calc(--value(integer) / var(--vw-base) * -100vw);
+}
+
+@utility -vw-right-* {
+  right: calc(--value(integer) / var(--vw-base) * -100vw);
+}
+
+@utility -vw-bottom-* {
+  bottom: calc(--value(integer) / var(--vw-base) * -100vw);
+}
+
+@utility -vw-left-* {
+  left: calc(--value(integer) / var(--vw-base) * -100vw);
+}
+
+@utility -vw-start-* {
+  inset-inline-start: calc(--value(integer) / var(--vw-base) * -100vw);
+}
+
+@utility -vw-end-* {
+  inset-inline-end: calc(--value(integer) / var(--vw-base) * -100vw);
+}
+
+/* ============================================
+   Border Radius
+   ============================================ */
+@utility vw-rounded-* {
+  border-radius: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+@utility vw-rounded-t-* {
+  border-top-left-radius: calc(--value(integer) / var(--vw-base) * 100vw);
+  border-top-right-radius: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+@utility vw-rounded-r-* {
+  border-top-right-radius: calc(--value(integer) / var(--vw-base) * 100vw);
+  border-bottom-right-radius: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+@utility vw-rounded-b-* {
+  border-bottom-left-radius: calc(--value(integer) / var(--vw-base) * 100vw);
+  border-bottom-right-radius: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+@utility vw-rounded-l-* {
+  border-top-left-radius: calc(--value(integer) / var(--vw-base) * 100vw);
+  border-bottom-left-radius: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+@utility vw-rounded-tl-* {
+  border-top-left-radius: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+@utility vw-rounded-tr-* {
+  border-top-right-radius: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+@utility vw-rounded-br-* {
+  border-bottom-right-radius: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+@utility vw-rounded-bl-* {
+  border-bottom-left-radius: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+/* ============================================
+   Border Width
+   ============================================ */
+@utility vw-border-* {
+  border-width: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+@utility vw-border-t-* {
+  border-top-width: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+@utility vw-border-r-* {
+  border-right-width: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+@utility vw-border-b-* {
+  border-bottom-width: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+@utility vw-border-l-* {
+  border-left-width: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+/* ============================================
+   Translate
+   ============================================ */
+@utility vw-translate-x-* {
+  --tw-translate-x: calc(--value(integer) / var(--vw-base) * 100vw);
+  translate: var(--tw-translate-x) var(--tw-translate-y);
+}
+
+@utility vw-translate-y-* {
+  --tw-translate-y: calc(--value(integer) / var(--vw-base) * 100vw);
+  translate: var(--tw-translate-x) var(--tw-translate-y);
+}
+
+@utility -vw-translate-x-* {
+  --tw-translate-x: calc(--value(integer) / var(--vw-base) * -100vw);
+  translate: var(--tw-translate-x) var(--tw-translate-y);
+}
+
+@utility -vw-translate-y-* {
+  --tw-translate-y: calc(--value(integer) / var(--vw-base) * -100vw);
+  translate: var(--tw-translate-x) var(--tw-translate-y);
+}
+
+/* ============================================
+   Scroll Margin
+   ============================================ */
+@utility vw-scroll-m-* {
+  scroll-margin: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+@utility vw-scroll-mx-* {
+  scroll-margin-inline: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+@utility vw-scroll-my-* {
+  scroll-margin-block: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+@utility vw-scroll-mt-* {
+  scroll-margin-top: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+@utility vw-scroll-mr-* {
+  scroll-margin-right: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+@utility vw-scroll-mb-* {
+  scroll-margin-bottom: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+@utility vw-scroll-ml-* {
+  scroll-margin-left: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+/* ============================================
+   Scroll Padding
+   ============================================ */
+@utility vw-scroll-p-* {
+  scroll-padding: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+@utility vw-scroll-px-* {
+  scroll-padding-inline: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+@utility vw-scroll-py-* {
+  scroll-padding-block: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+@utility vw-scroll-pt-* {
+  scroll-padding-top: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+@utility vw-scroll-pr-* {
+  scroll-padding-right: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+@utility vw-scroll-pb-* {
+  scroll-padding-bottom: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+@utility vw-scroll-pl-* {
+  scroll-padding-left: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+/* ============================================
+   Space Between (using flex/grid gap alternative)
+   ============================================ */
+@utility vw-space-x-* {
+  > :not(:last-child) {
+    margin-right: calc(--value(integer) / var(--vw-base) * 100vw);
+  }
+}
+
+@utility vw-space-y-* {
+  > :not(:last-child) {
+    margin-bottom: calc(--value(integer) / var(--vw-base) * 100vw);
+  }
+}
+
+/* ============================================
+   Flex Basis
+   ============================================ */
+@utility vw-basis-* {
+  flex-basis: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+/* ============================================
+   Letter Spacing (tracking)
+   ============================================ */
+@utility vw-tracking-* {
+  letter-spacing: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+@utility -vw-tracking-* {
+  letter-spacing: calc(--value(integer) / var(--vw-base) * -100vw);
+}
+
+/* ============================================
+   Text Indent
+   ============================================ */
+@utility vw-indent-* {
+  text-indent: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+@utility -vw-indent-* {
+  text-indent: calc(--value(integer) / var(--vw-base) * -100vw);
+}
+
+/* ============================================
+   Outline
+   ============================================ */
+@utility vw-outline-* {
+  outline-width: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+@utility vw-outline-offset-* {
+  outline-offset: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+@utility -vw-outline-offset-* {
+  outline-offset: calc(--value(integer) / var(--vw-base) * -100vw);
+}
+
+/* ============================================
+   SVG Stroke Width
+   ============================================ */
+@utility vw-stroke-* {
+  stroke-width: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+/* ============================================
+   Divide Width (border between children)
+   ============================================ */
+@utility vw-divide-x-* {
+  > :not(:first-child) {
+    border-left-width: calc(--value(integer) / var(--vw-base) * 100vw);
+  }
+}
+
+@utility vw-divide-y-* {
+  > :not(:first-child) {
+    border-top-width: calc(--value(integer) / var(--vw-base) * 100vw);
+  }
+}
+
+/* ============================================
+   Border Radius - Logical Properties
+   ============================================ */
+@utility vw-rounded-s-* {
+  border-start-start-radius: calc(--value(integer) / var(--vw-base) * 100vw);
+  border-end-start-radius: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+@utility vw-rounded-e-* {
+  border-start-end-radius: calc(--value(integer) / var(--vw-base) * 100vw);
+  border-end-end-radius: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+@utility vw-rounded-ss-* {
+  border-start-start-radius: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+@utility vw-rounded-se-* {
+  border-start-end-radius: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+@utility vw-rounded-ee-* {
+  border-end-end-radius: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+@utility vw-rounded-es-* {
+  border-end-start-radius: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+/* ============================================
+   Text Decoration Thickness
+   ============================================ */
+@utility vw-decoration-* {
+  text-decoration-thickness: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+/* ============================================
+   Text Underline Offset
+   ============================================ */
+@utility vw-underline-offset-* {
+  text-underline-offset: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+/* ============================================
+   Ring Width (simplified - uses box-shadow)
+   ============================================ */
+@utility vw-ring-* {
+  --tw-ring-offset-shadow: var(--tw-ring-inset,) 0 0 0
+    var(--tw-ring-offset-width, 0px) var(--tw-ring-offset-color, #fff);
+  --tw-ring-shadow: var(--tw-ring-inset,) 0 0 0
+    calc(
+      calc(--value(integer) / var(--vw-base) * 100vw) +
+        var(--tw-ring-offset-width, 0px)
+    )
+    var(--tw-ring-color, currentColor);
+  box-shadow:
+    var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
+    var(--tw-shadow, 0 0 #0000);
+}
+
+@utility vw-ring-offset-* {
+  --tw-ring-offset-width: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+/* ============================================
+   Border Spacing (for tables)
+   ============================================ */
+@utility vw-border-spacing-* {
+  border-spacing: calc(--value(integer) / var(--vw-base) * 100vw);
+}
+
+@utility vw-border-spacing-x-* {
+  --tw-border-spacing-x: calc(--value(integer) / var(--vw-base) * 100vw);
+  border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y, 0);
+}
+
+@utility vw-border-spacing-y-* {
+  --tw-border-spacing-y: calc(--value(integer) / var(--vw-base) * 100vw);
+  border-spacing: var(--tw-border-spacing-x, 0) var(--tw-border-spacing-y);
+}

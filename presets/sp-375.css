@@ -1,0 +1,6 @@
+/* SP 375px base preset */
+/* Usage: @import "tailwind-vw-utilities/presets/sp-375"; */
+
+:root {
+  --vw-base: 375;
+}

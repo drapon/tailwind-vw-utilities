@@ -1,0 +1,6 @@
+/* Retina 750px base preset (2x design) */
+/* Usage: @import "tailwind-vw-utilities/presets/retina-750"; */
+
+:root {
+  --vw-base: 750;
+}

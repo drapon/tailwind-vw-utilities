@@ -1,0 +1,17 @@
+/* Desktop presets for common breakpoints */
+/* Usage: @import "tailwind-vw-utilities/presets/desktop"; */
+
+/* Define CSS custom properties for each breakpoint */
+:root {
+  --vw-base-sm: 640;
+  --vw-base-md: 768;
+  --vw-base-lg: 1024;
+  --vw-base-xl: 1280;
+  --vw-base-2xl: 1536;
+}
+
+/* You can use these with media queries:
+   @media (min-width: 768px) {
+     :root { --vw-base: var(--vw-base-md); }
+   }
+*/
