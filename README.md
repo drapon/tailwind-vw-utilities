@@ -58,7 +58,41 @@ Available presets:
 - `presets/retina-750` - 750px base (for Retina designs)
 - `presets/desktop` - Desktop variable definitions
 
+## Multiple Base Widths (SP / PC)
+
+Use `vw-base-*` to switch the base width per breakpoint — like Tailwind's dark mode pattern, set context on a parent and children inherit it.
+
+```tsx
+// Set base width on a parent element with responsive variants
+<body className="vw-base-750 lg:vw-base-1536">
+  {/* SP: 8/750×100vw, PC(lg+): 16/1536×100vw */}
+  <div className="vw-gap-8 lg:vw-gap-16">
+    <h1 className="vw-text-28 lg:vw-text-48">Title</h1>
+  </div>
+
+  {/* Switch to fixed values on PC */}
+  <div className="vw-p-20 lg:p-5">Content</div>
+</body>
+```
+
+`vw-base-*` accepts any integer, so you can use any design comp width:
+
+```tsx
+<div className="vw-base-375">   {/* 375px base */}
+<div className="vw-base-750">   {/* 750px (Retina) base */}
+<div className="vw-base-1440">  {/* 1440px base */}
+<div className="vw-base-1536">  {/* 1536px base */}
+```
+
+> **Note:** At each base width, `vw-gap-8` always resolves to exactly 8px (proportional scaling). When the base switches at a breakpoint, values may jump — this is the same behavior as any responsive layout change. Use explicit overrides like `vw-gap-8 lg:vw-gap-16` when your SP and PC designs specify different px values.
+
 ## Available Utilities
+
+### Base Width
+
+| Class       | Description                                |
+| ----------- | ------------------------------------------ |
+| `vw-base-*` | Override `--vw-base` on element & children |
 
 ### Margin
 
