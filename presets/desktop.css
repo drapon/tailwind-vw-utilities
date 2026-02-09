@@ -10,8 +10,9 @@
   --vw-base-2xl: 1536;
 }
 
-/* You can use these with media queries:
-   @media (min-width: 768px) {
-     :root { --vw-base: var(--vw-base-md); }
-   }
+/* Recommended: Use vw-base-* utility with responsive variants
+
+   <body class="vw-base-750 lg:vw-base-1536">
+     <div class="vw-gap-8 lg:vw-gap-16">
+   </body>
 */
